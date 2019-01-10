@@ -1,0 +1,99 @@
+
+
+.layout {
+    display: flex;
+    flex-direction: row;
+}
+
+.searchViewLayout {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width:600px;
+}
+
+.previewViewLayout {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 30px;
+    width: 300px;
+}body{
+    background-color: #e8e8ee;
+}.boxLayout {
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    height: 120px;
+}
+
+.songImage {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    left: 10px;
+    top: 30px;
+}
+
+.text {
+    position: relative;
+    left: 22px;
+    top: 26px;
+}
+
+.textSongName {
+    font-size: 17px;
+    line-height: 0.5em;
+}
+
+.textArist {
+    font-size: 14px;
+    line-height: 0.5em;
+}
+
+.textAlbum {
+    font-size: 12px;
+
+}
+
+.playImage {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left: 55px;
+    top: 50px;
+}.text {
+    position: relative;
+    left: 30px;
+    top:2px;
+    width: 300px
+}.musicPlayerDiv div {
+    height: 0px !important;
+}
+
+.imagePosition {
+    width: 90px;
+    height: 90px;
+    position: relative;
+    left: 100px;
+    top: 20px;
+}
+
+.lineStyle {
+    position: relative;
+    top: 50px;
+}body {
+    background-color: #e8e8ee;
+    width: 300px;
+}
+
+.player {
+    position: absolute;
+    left: 400px;
+    top: 10px;
+}
+
+.previewSongList {
+    position: relative;
+    top: 50px;
+}

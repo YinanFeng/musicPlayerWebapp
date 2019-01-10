@@ -1,0 +1,16 @@
+.musicPlayerDiv div {
+    height: 0px !important;
+}
+
+.imagePosition {
+    width: 90px;
+    height: 90px;
+    position: relative;
+    left: 100px;
+    top: 20px;
+}
+
+.lineStyle {
+    position: relative;
+    top: 50px;
+}

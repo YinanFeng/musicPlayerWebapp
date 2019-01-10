@@ -1,0 +1,15 @@
+body {
+    background-color: #e8e8ee;
+    width: 300px;
+}
+
+.player {
+    position: absolute;
+    left: 400px;
+    top: 10px;
+}
+
+.previewSongList {
+    position: relative;
+    top: 50px;
+}

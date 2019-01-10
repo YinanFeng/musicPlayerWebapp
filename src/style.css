@@ -1,0 +1,21 @@
+
+
+.layout {
+    display: flex;
+    flex-direction: row;
+}
+
+.searchViewLayout {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width:600px;
+}
+
+.previewViewLayout {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 30px;
+    width: 300px;
+}
