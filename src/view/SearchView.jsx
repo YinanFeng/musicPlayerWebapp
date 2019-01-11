@@ -40,20 +40,15 @@ class SearchView extends React.Component {
 
   render () {
     console.log(this.props.searchRes)
-    const resSongs = this.props.searchRes.map(item => 
-      <button
-        key={item.trackId}
-        onClick={() => { this.props.addToPreview(item.trackId) }}>
-        {item.trackName}
-      </button>)
 
     const resSongsList = this.props.searchRes.map(item =>{
       let playing = false
       if(this.props.currentSong != null && this.props.currentSong.trackId===item.trackId){
         playing = true
       }
-      return (<button key={item.trackId} 
-                     onClick={() => { this.props.addToPreview(item.trackId) }}>
+      return (<button key={item.trackId}
+                      className='singleBoxButton' 
+                      onClick={() => { this.props.addToPreview(item.trackId) }}>
               <SearchResBox  
               imageURL={item.artworkUrl100}
               songName={item.trackName}
@@ -68,9 +63,13 @@ class SearchView extends React.Component {
 
     return (
       <React.Fragment>
-        <input value={this.state.searchBoxValue} onChange={this.onSearchBoxValueChanged} />
-        <button onClick={this.searchByArtistName}>search</button>
-        {resSongsList}
+        <input value={this.state.searchBoxValue}
+               className='input'
+               onChange={this.onSearchBoxValueChanged} />
+        <button className='searchButton' onClick={this.searchByArtistName}>search</button>
+        <div className='resSongList'>
+          {resSongsList}
+        </div>
       </React.Fragment>
     );
   };

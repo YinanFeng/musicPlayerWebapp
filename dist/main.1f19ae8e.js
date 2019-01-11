@@ -44496,7 +44496,9 @@ function (_React$Component) {
         className: "textArist"
       }, this.props.artist), _react.default.createElement("p", {
         className: "textAlbum"
-      }, this.props.album)), _react.default.createElement("div", null, this.props.playing ? _react.default.createElement("img", {
+      }, this.props.album)), _react.default.createElement("div", {
+        className: "imageDiv"
+      }, this.props.playing ? _react.default.createElement("img", {
         className: "playImage",
         src: require('./musicPlaying.png')
       }) : null)), _react.default.createElement("hr", null));
@@ -44725,14 +44727,6 @@ function (_React$Component) {
       var _this3 = this;
 
       console.log(this.props.searchRes);
-      var resSongs = this.props.searchRes.map(function (item) {
-        return _react.default.createElement("button", {
-          key: item.trackId,
-          onClick: function onClick() {
-            _this3.props.addToPreview(item.trackId);
-          }
-        }, item.trackName);
-      });
       var resSongsList = this.props.searchRes.map(function (item) {
         var playing = false;
 
@@ -44742,6 +44736,7 @@ function (_React$Component) {
 
         return _react.default.createElement("button", {
           key: item.trackId,
+          className: "singleBoxButton",
           onClick: function onClick() {
             _this3.props.addToPreview(item.trackId);
           }
@@ -44755,10 +44750,14 @@ function (_React$Component) {
       });
       return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("input", {
         value: this.state.searchBoxValue,
+        className: "input",
         onChange: this.onSearchBoxValueChanged
       }), _react.default.createElement("button", {
+        className: "searchButton",
         onClick: this.searchByArtistName
-      }, "search"), resSongsList);
+      }, "search"), _react.default.createElement("div", {
+        className: "resSongList"
+      }, resSongsList));
     }
   }]);
 
@@ -48442,7 +48441,7 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("p", {
-        className: "text"
+        className: "previewText"
       }, this.props.songName), _react.default.createElement("hr", null));
     }
   }]);
@@ -48509,15 +48508,19 @@ function (_React$Component) {
   _createClass(MusicPlayer, [{
     key: "render",
     value: function render() {
-      return _react.default.createElement(_react.default.Fragment, null, this.props.currentSong === null ? _react.default.createElement("img", {
+      return _react.default.createElement(_react.default.Fragment, null, this.props.currentSong === null ? _react.default.createElement("button", {
+        className: "playButton"
+      }, _react.default.createElement("img", {
         className: "imagePosition",
         src: require('./stop.png')
-      }) : null, this.props.currentSong !== null && this.props.currentStatus === 'playing' ? _react.default.createElement("button", {
+      })) : null, this.props.currentSong !== null && this.props.currentStatus === 'playing' ? _react.default.createElement("button", {
+        className: "playButton",
         onClick: this.props.changeStatus
       }, _react.default.createElement("img", {
         className: "imagePosition",
         src: require('./play.jpg')
       })) : null, this.props.currentSong !== null && this.props.currentStatus !== 'playing' ? _react.default.createElement("button", {
+        className: "playButton",
         onClick: this.props.changeStatus
       }, _react.default.createElement("img", {
         className: "imagePosition",
@@ -48635,6 +48638,7 @@ function (_React$Component) {
 
       var preSongs = this.props.allPreviewSongs.map(function (item) {
         return _react.default.createElement("button", {
+          className: "previewOption",
           key: item.trackId,
           onClick: function onClick() {
             _this.props.playNewSong(item.trackId);
@@ -48722,7 +48726,9 @@ var store = (0, _redux.createStore)(_reducer.default);
   className: "layout"
 }, _react.default.createElement("div", {
   className: "searchViewLayout"
-}, _react.default.createElement(_SearchViewContainer.default, null)), _react.default.createElement("div", {
+}, _react.default.createElement(_SearchViewContainer.default, null)), _react.default.createElement("hr", {
+  className: "hrline"
+}), _react.default.createElement("div", {
   className: "previewViewLayout"
 }, _react.default.createElement(_PreviewViewContainer.default, null)))), document.getElementById('root'));
 },{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","redux":"../node_modules/redux/es/redux.js","react-redux":"../node_modules/react-redux/es/index.js","./style.css":"style.css","./container/SearchViewContainer":"container/SearchViewContainer.js","./container/PreviewViewContainer":"container/PreviewViewContainer.js","./redux/reducer":"redux/reducer.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -48752,7 +48758,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54403" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52658" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

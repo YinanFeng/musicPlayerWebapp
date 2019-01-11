@@ -9,22 +9,64 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    width:600px;
+    width:1200px;
 }
 
 .previewViewLayout {
     display: flex;
     flex-direction: column;
     position: relative;
-    left: 30px;
+    left: 50px;
     width: 300px;
+}
+
+.hrline {
+    transform: rotate(180deg);
+    height:800px;
+    position: relative;
+    left: 90px;
+}
+
+.previewOption {
+    background-color: transparent;
+    border: none;
 }body{
     background-color: #e8e8ee;
+}
+
+.singleBoxButton {
+    border: none !important;
+    background-color: transparent;
+}
+
+.input {
+    width: 200px; 
+    height: 17px;
+    
+    /* border-radius: 4px; */
+     position: relative;
+    left: 40px; 
+    top: 50px;
+}
+
+.searchButton {
+    position: relative;
+    left: 240px; 
+    top: 60px;
+    width: 100px; 
+}
+
+.resSongList {
+    width: 300px;
+    position: relative;
+    left: 30px; 
+    top: 60px; 
 }.boxLayout {
     display: flex;
     flex-direction: row;
-    width: 300px;
+    width: 350px;
     height: 120px;
+    background-color: transparent;
 }
 
 .songImage {
@@ -37,8 +79,8 @@
 
 .text {
     position: relative;
-    left: 22px;
-    top: 26px;
+    left: -10px !important;
+    top: 20px !important;
 }
 
 .textSongName {
@@ -48,7 +90,7 @@
 
 .textArist {
     font-size: 14px;
-    line-height: 0.5em;
+    line-height: 0.6em;
 }
 
 .textAlbum {
@@ -56,16 +98,21 @@
 
 }
 
+.imageDiv {
+    position: relative;
+    left: -30px;
+}
+
 .playImage {
     width: 20px;
     height: 20px;
     position: relative;
-    left: 55px;
+    left: 1px;
     top: 50px;
-}.text {
+}.previewText {
     position: relative;
     left: 30px;
-    top:2px;
+    top:-3px;
     width: 300px
 }.musicPlayerDiv div {
     height: 0px !important;
@@ -75,13 +122,22 @@
     width: 90px;
     height: 90px;
     position: relative;
-    left: 100px;
-    top: 20px;
+    left: 0px;
+    top: 0px;
 }
 
 .lineStyle {
     position: relative;
     top: 50px;
+    left: 57px;
+}
+
+.playButton {
+    background-color: transparent;
+    border: none;
+    position: relative;
+    left: 130px;
+    top: 20px;
 }body {
     background-color: #e8e8ee;
     width: 300px;
@@ -96,4 +152,6 @@
 .previewSongList {
     position: relative;
     top: 50px;
+    left: 50px;
 }
+

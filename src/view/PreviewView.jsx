@@ -15,6 +15,7 @@ class PreviewView extends React.Component {
     render() {
         const preSongs = this.props.allPreviewSongs.map(item => 
             <button
+              className='previewOption'
               key={item.trackId} 
               onClick={() => { this.props.playNewSong(item.trackId) }}>
               <PreviewPlayingBox songName={item.trackName} />

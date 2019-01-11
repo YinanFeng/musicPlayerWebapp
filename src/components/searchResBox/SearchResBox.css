@@ -1,8 +1,9 @@
 .boxLayout {
     display: flex;
     flex-direction: row;
-    width: 300px;
+    width: 350px;
     height: 120px;
+    background-color: transparent;
 }
 
 .songImage {
@@ -15,8 +16,8 @@
 
 .text {
     position: relative;
-    left: 22px;
-    top: 26px;
+    left: -10px !important;
+    top: 20px !important;
 }
 
 .textSongName {
@@ -26,7 +27,7 @@
 
 .textArist {
     font-size: 14px;
-    line-height: 0.5em;
+    line-height: 0.6em;
 }
 
 .textAlbum {
@@ -34,10 +35,15 @@
 
 }
 
+.imageDiv {
+    position: relative;
+    left: -30px;
+}
+
 .playImage {
     width: 20px;
     height: 20px;
     position: relative;
-    left: 55px;
+    left: 1px;
     top: 50px;
 }

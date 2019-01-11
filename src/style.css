@@ -9,13 +9,25 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    width:600px;
+    width:1200px;
 }
 
 .previewViewLayout {
     display: flex;
     flex-direction: column;
     position: relative;
-    left: 30px;
+    left: 50px;
     width: 300px;
+}
+
+.hrline {
+    transform: rotate(180deg);
+    height:800px;
+    position: relative;
+    left: 90px;
+}
+
+.previewOption {
+    background-color: transparent;
+    border: none;
 }

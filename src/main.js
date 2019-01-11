@@ -19,6 +19,7 @@ render(
             <div className='searchViewLayout'>
                 <SearchViewContainer />
             </div>
+            <hr className='hrline' />
             <div className='previewViewLayout'>
                 <PreviewViewContainer/>
             </div>

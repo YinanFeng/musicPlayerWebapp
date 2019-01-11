@@ -6,11 +6,20 @@
     width: 90px;
     height: 90px;
     position: relative;
-    left: 100px;
-    top: 20px;
+    left: 0px;
+    top: 0px;
 }
 
 .lineStyle {
     position: relative;
     top: 50px;
+    left: 57px;
+}
+
+.playButton {
+    background-color: transparent;
+    border: none;
+    position: relative;
+    left: 130px;
+    top: 20px;
 }

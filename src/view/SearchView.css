@@ -1,3 +1,32 @@
 body{
     background-color: #e8e8ee;
 }
+
+.singleBoxButton {
+    border: none !important;
+    background-color: transparent;
+}
+
+.input {
+    width: 200px; 
+    height: 17px;
+    
+    /* border-radius: 4px; */
+     position: relative;
+    left: 40px; 
+    top: 50px;
+}
+
+.searchButton {
+    position: relative;
+    left: 240px; 
+    top: 60px;
+    width: 100px; 
+}
+
+.resSongList {
+    width: 300px;
+    position: relative;
+    left: 30px; 
+    top: 60px; 
+}
