@@ -16,28 +16,29 @@
 
 .text {
     position: relative;
-    left: -10px !important;
+    left: 20px !important;
     top: 20px !important;
+    width: 200px;
 }
 
 .textSongName {
-    font-size: 17px;
-    line-height: 0.5em;
+    font-size: 15px;
+    line-height: 1em;
 }
 
 .textArist {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 0.6em;
 }
 
 .textAlbum {
-    font-size: 12px;
+    font-size: 10px;
 
 }
 
-.imageDiv {
+.resImageDiv {
     position: relative;
-    left: -30px;
+    left: 20px;
 }
 
 .playImage {

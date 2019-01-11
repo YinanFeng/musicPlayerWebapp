@@ -16,7 +16,7 @@ class SearchResBox extends React.Component {
             <p className='textArist'>{this.props.artist}</p>
             <p className='textAlbum'>{this.props.album}</p>
           </div>
-          <div className='imageDiv'>
+          <div className='resImageDiv'>
             {this.props.playing? <img className='playImage' src={require('./musicPlaying.png')} />:null}
           </div>
         </div>

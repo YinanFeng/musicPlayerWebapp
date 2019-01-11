@@ -79,28 +79,29 @@
 
 .text {
     position: relative;
-    left: -10px !important;
+    left: 20px !important;
     top: 20px !important;
+    width: 200px;
 }
 
 .textSongName {
-    font-size: 17px;
-    line-height: 0.5em;
+    font-size: 15px;
+    line-height: 1em;
 }
 
 .textArist {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 0.6em;
 }
 
 .textAlbum {
-    font-size: 12px;
+    font-size: 10px;
 
 }
 
-.imageDiv {
+.resImageDiv {
     position: relative;
-    left: -30px;
+    left: 20px;
 }
 
 .playImage {
@@ -111,7 +112,7 @@
     top: 50px;
 }.previewText {
     position: relative;
-    left: 30px;
+    left: 8px;
     top:-3px;
     width: 300px
 }.musicPlayerDiv div {
@@ -119,8 +120,8 @@
 }
 
 .imagePosition {
-    width: 90px;
-    height: 90px;
+    width: 45px;
+    height: 45px;
     position: relative;
     left: 0px;
     top: 0px;
@@ -136,8 +137,21 @@
     background-color: transparent;
     border: none;
     position: relative;
-    left: 130px;
+    left: 180px;
     top: 20px;
+}
+
+.imageDiv {
+    position: relative;
+    left: 100px;
+    width: 200px;
+    height: 200px;
+    background-color: #D3D3D3;
+}
+
+.songImagePreview {
+    width: 200px;
+    height: 200px;
 }body {
     background-color: #e8e8ee;
     width: 300px;

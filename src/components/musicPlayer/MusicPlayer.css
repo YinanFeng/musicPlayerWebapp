@@ -3,8 +3,8 @@
 }
 
 .imagePosition {
-    width: 90px;
-    height: 90px;
+    width: 45px;
+    height: 45px;
     position: relative;
     left: 0px;
     top: 0px;
@@ -20,6 +20,19 @@
     background-color: transparent;
     border: none;
     position: relative;
-    left: 130px;
+    left: 180px;
     top: 20px;
+}
+
+.imageDiv {
+    position: relative;
+    left: 100px;
+    width: 200px;
+    height: 200px;
+    background-color: #D3D3D3;
+}
+
+.songImagePreview {
+    width: 200px;
+    height: 200px;
 }

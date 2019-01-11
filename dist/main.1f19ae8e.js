@@ -44497,7 +44497,7 @@ function (_React$Component) {
       }, this.props.artist), _react.default.createElement("p", {
         className: "textAlbum"
       }, this.props.album)), _react.default.createElement("div", {
-        className: "imageDiv"
+        className: "resImageDiv"
       }, this.props.playing ? _react.default.createElement("img", {
         className: "playImage",
         src: require('./musicPlaying.png')
@@ -48508,7 +48508,12 @@ function (_React$Component) {
   _createClass(MusicPlayer, [{
     key: "render",
     value: function render() {
-      return _react.default.createElement(_react.default.Fragment, null, this.props.currentSong === null ? _react.default.createElement("button", {
+      return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("div", {
+        className: "imageDiv"
+      }, this.props.currentSong !== null ? _react.default.createElement("img", {
+        src: this.props.currentSong.artworkUrl100,
+        className: "songImagePreview"
+      }) : null), this.props.currentSong === null ? _react.default.createElement("button", {
         className: "playButton"
       }, _react.default.createElement("img", {
         className: "imagePosition",
