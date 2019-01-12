@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
+import PropTypes from 'prop-types';
 
 import PreviewSong from '../components/previewSong/PreviewSong'
 import MusicPlayerContainer from '../container/MusicPlayerContainer'
@@ -32,6 +33,11 @@ class PreviewView extends React.Component {
         )
     }
 }
-// <ReactPlayer url='https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/Music/v4/08/d9/c5/08d9c56d-73e5-be1c-1eda-071a48284440/mzaf_8565025008024189274.plus.aac.p.m4a' playing />
+
 
 export default PreviewView
+
+
+PreviewView.propTypes = {
+    allPreviewSongs:PropTypes.array.isRequired,
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 import './PreviewSong.css'
 
@@ -15,3 +16,8 @@ class PreviewSong extends React.Component {
 }
 
 export default PreviewSong
+
+
+PreviewSong.propTypes = {
+    songName:PropTypes.string.isRequired,
+}

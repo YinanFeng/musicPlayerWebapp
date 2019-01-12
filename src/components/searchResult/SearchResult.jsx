@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 import './SearchResult.css';
 
@@ -28,3 +29,12 @@ class SearchResultList extends React.Component {
 }
 
 export default SearchResultList;
+
+
+SearchResultList.propTypes = {
+    imageURL:PropTypes.string.isRequired,
+    songName:PropTypes.string.isRequired,
+    artist:PropTypes.string.isRequired,
+    album:PropTypes.string.isRequired,
+    playing: PropTypes.bool.isRequired
+}

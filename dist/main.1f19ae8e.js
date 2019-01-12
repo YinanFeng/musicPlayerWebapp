@@ -44447,6 +44447,8 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
 require("./SearchResult.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -44510,7 +44512,14 @@ function (_React$Component) {
 
 var _default = SearchResultList;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./SearchResult.css":"components/searchResult/SearchResult.css","./musicPlaying.png":"components/searchResult/musicPlaying.png"}],"../node_modules/fetch-jsonp/build/fetch-jsonp.js":[function(require,module,exports) {
+SearchResultList.propTypes = {
+  imageURL: _propTypes.default.string.isRequired,
+  songName: _propTypes.default.string.isRequired,
+  artist: _propTypes.default.string.isRequired,
+  album: _propTypes.default.string.isRequired,
+  playing: _propTypes.default.bool.isRequired
+};
+},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","./SearchResult.css":"components/searchResult/SearchResult.css","./musicPlaying.png":"components/searchResult/musicPlaying.png"}],"../node_modules/fetch-jsonp/build/fetch-jsonp.js":[function(require,module,exports) {
 var define;
 var global = arguments[3];
 (function (global, factory) {
@@ -44646,6 +44655,8 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
 require("./SearchView.css");
 
 var _SearchResult = _interopRequireDefault(require("../components/searchResult/SearchResult"));
@@ -44764,7 +44775,10 @@ function (_React$Component) {
 
 var _default = SearchView;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./SearchView.css":"view/SearchView.css","../components/searchResult/SearchResult":"components/searchResult/SearchResult.jsx","fetch-jsonp":"../node_modules/fetch-jsonp/build/fetch-jsonp.js"}],"container/SearchViewContainer.js":[function(require,module,exports) {
+SearchView.propTypes = {
+  searchRes: _propTypes.default.array.isRequired
+};
+},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","./SearchView.css":"view/SearchView.css","../components/searchResult/SearchResult":"components/searchResult/SearchResult.jsx","fetch-jsonp":"../node_modules/fetch-jsonp/build/fetch-jsonp.js"}],"container/SearchViewContainer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -48404,6 +48418,8 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
 require("./PreviewSong.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -48451,7 +48467,10 @@ function (_React$Component) {
 
 var _default = PreviewSong;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./PreviewSong.css":"components/previewSong/PreviewSong.css"}],"components/musicPlayer/MusicPlayer.css":[function(require,module,exports) {
+PreviewSong.propTypes = {
+  songName: _propTypes.default.string.isRequired
+};
+},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","./PreviewSong.css":"components/previewSong/PreviewSong.css"}],"components/musicPlayer/MusicPlayer.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -48471,6 +48490,8 @@ exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 
 var _reactPlayer = _interopRequireDefault(require("react-player"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
 require("./MusicPlayer.css");
 
@@ -48548,7 +48569,10 @@ function (_React$Component) {
 
 var _default = MusicPlayer;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-player":"../node_modules/react-player/lib/ReactPlayer.js","./MusicPlayer.css":"components/musicPlayer/MusicPlayer.css","./stop.png":"components/musicPlayer/stop.png","./play.jpg":"components/musicPlayer/play.jpg"}],"container/MusicPlayerContainer.js":[function(require,module,exports) {
+MusicPlayer.propTypes = {
+  currentStatus: _propTypes.default.string.isRequired
+};
+},{"react":"../node_modules/react/index.js","react-player":"../node_modules/react-player/lib/ReactPlayer.js","prop-types":"../node_modules/prop-types/index.js","./MusicPlayer.css":"components/musicPlayer/MusicPlayer.css","./stop.png":"components/musicPlayer/stop.png","./play.jpg":"components/musicPlayer/play.jpg"}],"container/MusicPlayerContainer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -48601,6 +48625,8 @@ exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 
 var _reactPlayer = _interopRequireDefault(require("react-player"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _PreviewSong = _interopRequireDefault(require("../components/previewSong/PreviewSong"));
 
@@ -48662,12 +48688,14 @@ function (_React$Component) {
   }]);
 
   return PreviewView;
-}(_react.default.Component); // <ReactPlayer url='https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/Music/v4/08/d9/c5/08d9c56d-73e5-be1c-1eda-071a48284440/mzaf_8565025008024189274.plus.aac.p.m4a' playing />
-
+}(_react.default.Component);
 
 var _default = PreviewView;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-player":"../node_modules/react-player/lib/ReactPlayer.js","../components/previewSong/PreviewSong":"components/previewSong/PreviewSong.jsx","../container/MusicPlayerContainer":"container/MusicPlayerContainer.js","./PreviewView.css":"view/PreviewView.css"}],"container/PreviewViewContainer.js":[function(require,module,exports) {
+PreviewView.propTypes = {
+  allPreviewSongs: _propTypes.default.array.isRequired
+};
+},{"react":"../node_modules/react/index.js","react-player":"../node_modules/react-player/lib/ReactPlayer.js","prop-types":"../node_modules/prop-types/index.js","../components/previewSong/PreviewSong":"components/previewSong/PreviewSong.jsx","../container/MusicPlayerContainer":"container/MusicPlayerContainer.js","./PreviewView.css":"view/PreviewView.css"}],"container/PreviewViewContainer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

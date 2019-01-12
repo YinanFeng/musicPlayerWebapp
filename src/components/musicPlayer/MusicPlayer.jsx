@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
+import PropTypes from 'prop-types';
 
 import './MusicPlayer.css'
 
@@ -27,3 +28,8 @@ class MusicPlayer extends React.Component{
 
 
 export default MusicPlayer
+
+
+MusicPlayer.propTypes = {
+    currentStatus:PropTypes.string.isRequired,
+}

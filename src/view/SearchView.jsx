@@ -1,5 +1,5 @@
 import React from "react"
-//with fetch
+import PropTypes from 'prop-types';
 
 import './SearchView.css'
 import SearchResult from '../components/searchResult/SearchResult'
@@ -55,7 +55,7 @@ class SearchView extends React.Component {
               />
             </button>)
     })
-    
+
     return (
       <React.Fragment>
         <input value={this.state.searchBoxValue}
@@ -72,3 +72,7 @@ class SearchView extends React.Component {
 
 
 export default SearchView;
+
+SearchView.propTypes = {
+    searchRes:PropTypes.array.isRequired,
+}
