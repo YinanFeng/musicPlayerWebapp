@@ -44776,6 +44776,8 @@ exports.default = void 0;
 
 var _reactRedux = require("react-redux");
 
+var _redux = require("redux");
+
 var _reducer = require("../redux/reducer");
 
 var _SearchView = _interopRequireDefault(require("../view/SearchView"));
@@ -44787,23 +44789,23 @@ var mapStateToProps = function mapStateToProps(state) {
     searchRes: state.searchResult,
     currentSong: state.currentSong
   };
-};
+}; // const mapDispatchToProps = (dispatch) => ({
+//   updateNewSearch: searchRes => dispatch(updateNewSearch(searchRes)),
+//   addToPreview: trackId=> dispatch(addToPreview(trackId))
+// })
+
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    updateNewSearch: function updateNewSearch(searchRes) {
-      return dispatch((0, _reducer.updateNewSearch)(searchRes));
-    },
-    addToPreview: function addToPreview(trackId) {
-      return dispatch((0, _reducer.addToPreview)(trackId));
-    }
-  };
+  return (0, _redux.bindActionCreators)({
+    updateNewSearch: _reducer.updateNewSearch,
+    addToPreview: _reducer.addToPreview
+  }, dispatch);
 };
 
 var _default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_SearchView.default);
 
 exports.default = _default;
-},{"react-redux":"../node_modules/react-redux/es/index.js","../redux/reducer":"redux/reducer.js","../view/SearchView":"view/SearchView.jsx"}],"../node_modules/load-script/index.js":[function(require,module,exports) {
+},{"react-redux":"../node_modules/react-redux/es/index.js","redux":"../node_modules/redux/es/redux.js","../redux/reducer":"redux/reducer.js","../view/SearchView":"view/SearchView.jsx"}],"../node_modules/load-script/index.js":[function(require,module,exports) {
 
 module.exports = function load (src, opts, cb) {
   var head = document.head || document.getElementsByTagName('head')[0]
@@ -48558,6 +48560,8 @@ exports.default = void 0;
 
 var _reactRedux = require("react-redux");
 
+var _redux = require("redux");
+
 var _reducer = require("../redux/reducer");
 
 var _MusicPlayer = _interopRequireDefault(require("../components/musicPlayer/MusicPlayer"));
@@ -48569,20 +48573,21 @@ var mapStateToProps = function mapStateToProps(state) {
     currentSong: state.currentSong,
     currentStatus: state.currentStatus
   };
-};
+}; // const mapDispatchToProps = (dispatch) => ({
+//     changeStatus: () => dispatch(changeStatus()),
+// })
+
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    changeStatus: function changeStatus() {
-      return dispatch((0, _reducer.changeStatus)());
-    }
-  };
+  return (0, _redux.bindActionCreators)({
+    changeStatus: _reducer.changeStatus
+  }, dispatch);
 };
 
 var _default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_MusicPlayer.default);
 
 exports.default = _default;
-},{"react-redux":"../node_modules/react-redux/es/index.js","../redux/reducer":"redux/reducer.js","../components/musicPlayer/MusicPlayer":"components/musicPlayer/MusicPlayer.jsx"}],"view/PreviewView.css":[function(require,module,exports) {
+},{"react-redux":"../node_modules/react-redux/es/index.js","redux":"../node_modules/redux/es/redux.js","../redux/reducer":"redux/reducer.js","../components/musicPlayer/MusicPlayer":"components/musicPlayer/MusicPlayer.jsx"}],"view/PreviewView.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -48674,6 +48679,8 @@ exports.default = void 0;
 
 var _reactRedux = require("react-redux");
 
+var _redux = require("redux");
+
 var _reducer = require("../redux/reducer");
 
 var _PreviewView = _interopRequireDefault(require("../view/PreviewView"));
@@ -48686,23 +48693,23 @@ var mapStateToProps = function mapStateToProps(state) {
     currentSong: state.currentSong,
     currentStatus: state.currentStatus
   };
-};
+}; // const mapDispatchToProps = (dispatch) => ({
+//   changeStatus: () => dispatch(changeStatus()),
+//   playNewSong: newPreviewId => dispatch(playNewSong(newPreviewId))
+// })
+
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    changeStatus: function changeStatus() {
-      return dispatch((0, _reducer.changeStatus)());
-    },
-    playNewSong: function playNewSong(newPreviewId) {
-      return dispatch((0, _reducer.playNewSong)(newPreviewId));
-    }
-  };
+  return (0, _redux.bindActionCreators)({
+    changeStatus: _reducer.changeStatus,
+    playNewSong: _reducer.playNewSong
+  }, dispatch);
 };
 
 var _default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_PreviewView.default);
 
 exports.default = _default;
-},{"react-redux":"../node_modules/react-redux/es/index.js","../redux/reducer":"redux/reducer.js","../view/PreviewView":"view/PreviewView.jsx"}],"main.js":[function(require,module,exports) {
+},{"react-redux":"../node_modules/react-redux/es/index.js","redux":"../node_modules/redux/es/redux.js","../redux/reducer":"redux/reducer.js","../view/PreviewView":"view/PreviewView.jsx"}],"main.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -48763,7 +48770,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52658" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65124" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
