@@ -1,33 +1,23 @@
-
-
-.layout {
+.main {
     display: flex;
     flex-direction: row;
 }
 
-.searchViewLayout {
+.main__searchView {
     display: flex;
     flex-direction: column;
     position: relative;
     width:1200px;
 }
 
-.previewViewLayout {
+.main__previewView {
     display: flex;
     flex-direction: column;
     position: relative;
-    left: 50px;
+    left: 10px;
     width: 300px;
 }
 
-.hrline {
-    transform: rotate(180deg);
-    height:800px;
-    position: relative;
-    left: 90px;
-}
-
-.previewOption {
-    background-color: transparent;
-    border: none;
+body{
+    background-color: #e8e8ee;
 }

@@ -15,12 +15,11 @@ const store = createStore(reducer)
 
 render(
     <Provider store={store}>
-        <div className='layout'>
-            <div className='searchViewLayout'>
+        <div className='main'>
+            <div className='main__searchView'>
                 <SearchViewContainer />
             </div>
-            <hr className='hrline' />
-            <div className='previewViewLayout'>
+            <div className='main__previewView'>
                 <PreviewViewContainer/>
             </div>
         </div>

@@ -1,67 +1,56 @@
-
-
-.layout {
+.main {
     display: flex;
     flex-direction: row;
 }
 
-.searchViewLayout {
+.main__searchView {
     display: flex;
     flex-direction: column;
     position: relative;
     width:1200px;
 }
 
-.previewViewLayout {
+.main__previewView {
     display: flex;
     flex-direction: column;
     position: relative;
-    left: 50px;
+    left: 10px;
     width: 300px;
 }
 
-.hrline {
-    transform: rotate(180deg);
-    height:800px;
-    position: relative;
-    left: 90px;
-}
-
-.previewOption {
-    background-color: transparent;
-    border: none;
-}body{
+body{
     background-color: #e8e8ee;
 }
 
-.singleBoxButton {
+
+.search-view__preview-song {
     border: none !important;
     background-color: transparent;
 }
 
-.input {
-    width: 200px; 
+.search-view__search-input {
+    width: 200px;
     height: 17px;
-    
     /* border-radius: 4px; */
-     position: relative;
-    left: 40px; 
+    position: relative;
+    left: 40px;
     top: 50px;
 }
 
-.searchButton {
+.search-view__search-button {
     position: relative;
-    left: 240px; 
+    left: 240px;
     top: 60px;
-    width: 100px; 
+    width: 100px;
 }
 
-.resSongList {
+.search-view__search-result-song-list {
     width: 300px;
     position: relative;
-    left: 30px; 
-    top: 60px; 
-}.boxLayout {
+    left: 30px;
+    top: 60px;
+}
+.search-result {
     display: flex;
     flex-direction: row;
     width: 350px;
@@ -69,7 +58,7 @@
     background-color: transparent;
 }
 
-.songImage {
+.search-result__song-image {
     width: 60px;
     height: 60px;
     position: relative;
@@ -77,49 +66,50 @@
     top: 30px;
 }
 
-.text {
+.search-result__text {
     position: relative;
     left: 20px !important;
     top: 20px !important;
     width: 200px;
 }
 
-.textSongName {
+.search-result__text-song-name {
     font-size: 15px;
     line-height: 1em;
 }
 
-.textArist {
+.search-result__text-artist {
     font-size: 12px;
     line-height: 0.6em;
 }
 
-.textAlbum {
+.search-result__text-album {
     font-size: 10px;
-
 }
 
-.resImageDiv {
+.search-result__image-playing-div {
     position: relative;
     left: 20px;
 }
 
-.playImage {
+.search-result__image-playing {
     width: 20px;
     height: 20px;
     position: relative;
     left: 1px;
     top: 50px;
-}.previewText {
+}
+.preview-song {
     position: relative;
     left: 8px;
     top:-3px;
     width: 300px
-}.musicPlayerDiv div {
+}
+.musicPlayer__audioPlayer div {
     height: 0px !important;
 }
 
-.imagePosition {
+.musicPlayer__play-image {
     width: 45px;
     height: 45px;
     position: relative;
@@ -127,13 +117,13 @@
     top: 0px;
 }
 
-.lineStyle {
+.musicPlayer__line {
     position: relative;
     top: 50px;
     left: 57px;
 }
 
-.playButton {
+.musicPlayer__playButton {
     background-color: transparent;
     border: none;
     position: relative;
@@ -141,7 +131,7 @@
     top: 20px;
 }
 
-.imageDiv {
+.musicPlayer__imageDiv {
     position: relative;
     left: 100px;
     width: 200px;
@@ -149,23 +139,17 @@
     background-color: #D3D3D3;
 }
 
-.songImagePreview {
+.musicPlayer__imageDiv-songImagePreview {
     width: 200px;
     height: 200px;
-}body {
-    background-color: #e8e8ee;
-    width: 300px;
 }
-
-.player {
-    position: absolute;
-    left: 400px;
-    top: 10px;
-}
-
-.previewSongList {
+.preview-view__song-list {
     position: relative;
     top: 50px;
     left: 50px;
 }
 
+.preview-view__song-option {
+    background-color: transparent;
+    border: none;
+}

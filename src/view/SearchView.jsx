@@ -2,7 +2,7 @@ import React from "react"
 //with fetch
 
 import './SearchView.css'
-import SearchResBox from '../components/searchResBox/SearchResBox'
+import SearchResult from '../components/searchResult/SearchResult'
 
 const fetchJsonp = require('fetch-jsonp')
 
@@ -19,7 +19,6 @@ class SearchView extends React.Component {
   }
 
   onSearchBoxValueChanged(e) {
-    console.log(e.target.value)
     this.setState({ searchBoxValue: e.target.value, })
 }
 
@@ -39,17 +38,15 @@ class SearchView extends React.Component {
   }
 
   render () {
-    console.log(this.props.searchRes)
-
     const resSongsList = this.props.searchRes.map(item =>{
       let playing = false
       if(this.props.currentSong != null && this.props.currentSong.trackId===item.trackId){
         playing = true
       }
       return (<button key={item.trackId}
-                      className='singleBoxButton' 
+                      className='search-view__preview-song'
                       onClick={() => { this.props.addToPreview(item.trackId) }}>
-              <SearchResBox  
+              <SearchResult
               imageURL={item.artworkUrl100}
               songName={item.trackName}
               artist={item.artistName}
@@ -57,17 +54,15 @@ class SearchView extends React.Component {
               playing={playing}
               />
             </button>)
-    }) 
-
-
-
+    })
+    
     return (
       <React.Fragment>
         <input value={this.state.searchBoxValue}
-               className='input'
+               className='search-view__search-input'
                onChange={this.onSearchBoxValueChanged} />
-        <button className='searchButton' onClick={this.searchByArtistName}>search</button>
-        <div className='resSongList'>
+        <button className='search-view__search-button' onClick={this.searchByArtistName}>search</button>
+        <div className='search-view__search-result-song-list'>
           {resSongsList}
         </div>
       </React.Fragment>

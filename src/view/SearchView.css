@@ -1,32 +1,29 @@
-body{
-    background-color: #e8e8ee;
-}
 
-.singleBoxButton {
+
+.search-view__preview-song {
     border: none !important;
     background-color: transparent;
 }
 
-.input {
-    width: 200px; 
+.search-view__search-input {
+    width: 200px;
     height: 17px;
-    
     /* border-radius: 4px; */
-     position: relative;
-    left: 40px; 
+    position: relative;
+    left: 40px;
     top: 50px;
 }
 
-.searchButton {
+.search-view__search-button {
     position: relative;
-    left: 240px; 
+    left: 240px;
     top: 60px;
-    width: 100px; 
+    width: 100px;
 }
 
-.resSongList {
+.search-view__search-result-song-list {
     width: 300px;
     position: relative;
-    left: 30px; 
-    top: 60px; 
+    left: 30px;
+    top: 60px;
 }

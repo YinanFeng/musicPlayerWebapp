@@ -1,17 +1,10 @@
-body {
-    background-color: #e8e8ee;
-    width: 300px;
-}
-
-.player {
-    position: absolute;
-    left: 400px;
-    top: 10px;
-}
-
-.previewSongList {
+.preview-view__song-list {
     position: relative;
     top: 50px;
     left: 50px;
 }
 
+.preview-view__song-option {
+    background-color: transparent;
+    border: none;
+}

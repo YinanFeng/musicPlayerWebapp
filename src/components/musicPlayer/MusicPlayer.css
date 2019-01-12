@@ -1,8 +1,8 @@
-.musicPlayerDiv div {
+.musicPlayer__audioPlayer div {
     height: 0px !important;
 }
 
-.imagePosition {
+.musicPlayer__play-image {
     width: 45px;
     height: 45px;
     position: relative;
@@ -10,13 +10,13 @@
     top: 0px;
 }
 
-.lineStyle {
+.musicPlayer__line {
     position: relative;
     top: 50px;
     left: 57px;
 }
 
-.playButton {
+.musicPlayer__playButton {
     background-color: transparent;
     border: none;
     position: relative;
@@ -24,7 +24,7 @@
     top: 20px;
 }
 
-.imageDiv {
+.musicPlayer__imageDiv {
     position: relative;
     left: 100px;
     width: 200px;
@@ -32,7 +32,7 @@
     background-color: #D3D3D3;
 }
 
-.songImagePreview {
+.musicPlayer__imageDiv-songImagePreview {
     width: 200px;
     height: 200px;
 }

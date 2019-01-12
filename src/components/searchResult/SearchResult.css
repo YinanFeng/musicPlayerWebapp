@@ -1,4 +1,4 @@
-.boxLayout {
+.search-result {
     display: flex;
     flex-direction: row;
     width: 350px;
@@ -6,7 +6,7 @@
     background-color: transparent;
 }
 
-.songImage {
+.search-result__song-image {
     width: 60px;
     height: 60px;
     position: relative;
@@ -14,34 +14,33 @@
     top: 30px;
 }
 
-.text {
+.search-result__text {
     position: relative;
     left: 20px !important;
     top: 20px !important;
     width: 200px;
 }
 
-.textSongName {
+.search-result__text-song-name {
     font-size: 15px;
     line-height: 1em;
 }
 
-.textArist {
+.search-result__text-artist {
     font-size: 12px;
     line-height: 0.6em;
 }
 
-.textAlbum {
+.search-result__text-album {
     font-size: 10px;
-
 }
 
-.resImageDiv {
+.search-result__image-playing-div {
     position: relative;
     left: 20px;
 }
 
-.playImage {
+.search-result__image-playing {
     width: 20px;
     height: 20px;
     position: relative;

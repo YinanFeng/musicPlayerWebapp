@@ -44430,14 +44430,14 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/searchResBox/SearchResBox.css":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/searchResult/SearchResult.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/searchResBox/musicPlaying.png":[function(require,module,exports) {
-module.exports = "/musicPlaying.ec687446.png";
-},{}],"components/searchResBox/SearchResBox.jsx":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/searchResult/musicPlaying.png":[function(require,module,exports) {
+module.exports = "/musicPlaying.1666a184.png";
+},{}],"components/searchResult/SearchResult.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -44447,7 +44447,7 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-require("./SearchResBox.css");
+require("./SearchResult.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44469,48 +44469,48 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var SearchResBox =
+var SearchResultList =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(SearchResBox, _React$Component);
+  _inherits(SearchResultList, _React$Component);
 
-  function SearchResBox() {
-    _classCallCheck(this, SearchResBox);
+  function SearchResultList() {
+    _classCallCheck(this, SearchResultList);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(SearchResBox).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(SearchResultList).apply(this, arguments));
   }
 
-  _createClass(SearchResBox, [{
+  _createClass(SearchResultList, [{
     key: "render",
     value: function render() {
       return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("div", {
-        className: "boxLayout"
+        className: "search-result"
       }, _react.default.createElement("div", null, _react.default.createElement("img", {
-        className: "songImage",
+        className: "search-result__song-image",
         src: this.props.imageURL
       })), _react.default.createElement("div", {
-        className: "text"
+        className: "search-result__text"
       }, _react.default.createElement("p", {
-        className: "textSongName"
+        className: "search-result__text-song-name"
       }, this.props.songName), _react.default.createElement("p", {
-        className: "textArist"
+        className: "search-result__text-artist"
       }, this.props.artist), _react.default.createElement("p", {
-        className: "textAlbum"
+        className: "search-result__text-album"
       }, this.props.album)), _react.default.createElement("div", {
-        className: "resImageDiv"
+        className: "search-result__image-playing-div"
       }, this.props.playing ? _react.default.createElement("img", {
-        className: "playImage",
+        className: "search-result__image-playing",
         src: require('./musicPlaying.png')
       }) : null)), _react.default.createElement("hr", null));
     }
   }]);
 
-  return SearchResBox;
+  return SearchResultList;
 }(_react.default.Component);
 
-var _default = SearchResBox;
+var _default = SearchResultList;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./SearchResBox.css":"components/searchResBox/SearchResBox.css","./musicPlaying.png":"components/searchResBox/musicPlaying.png"}],"../node_modules/fetch-jsonp/build/fetch-jsonp.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./SearchResult.css":"components/searchResult/SearchResult.css","./musicPlaying.png":"components/searchResult/musicPlaying.png"}],"../node_modules/fetch-jsonp/build/fetch-jsonp.js":[function(require,module,exports) {
 var define;
 var global = arguments[3];
 (function (global, factory) {
@@ -44648,7 +44648,7 @@ var _react = _interopRequireDefault(require("react"));
 
 require("./SearchView.css");
 
-var _SearchResBox = _interopRequireDefault(require("../components/searchResBox/SearchResBox"));
+var _SearchResult = _interopRequireDefault(require("../components/searchResult/SearchResult"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44694,7 +44694,6 @@ function (_React$Component) {
   _createClass(SearchView, [{
     key: "onSearchBoxValueChanged",
     value: function onSearchBoxValueChanged(e) {
-      console.log(e.target.value);
       this.setState({
         searchBoxValue: e.target.value
       });
@@ -44726,7 +44725,6 @@ function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
-      console.log(this.props.searchRes);
       var resSongsList = this.props.searchRes.map(function (item) {
         var playing = false;
 
@@ -44736,11 +44734,11 @@ function (_React$Component) {
 
         return _react.default.createElement("button", {
           key: item.trackId,
-          className: "singleBoxButton",
+          className: "search-view__preview-song",
           onClick: function onClick() {
             _this3.props.addToPreview(item.trackId);
           }
-        }, _react.default.createElement(_SearchResBox.default, {
+        }, _react.default.createElement(_SearchResult.default, {
           imageURL: item.artworkUrl100,
           songName: item.trackName,
           artist: item.artistName,
@@ -44750,13 +44748,13 @@ function (_React$Component) {
       });
       return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("input", {
         value: this.state.searchBoxValue,
-        className: "input",
+        className: "search-view__search-input",
         onChange: this.onSearchBoxValueChanged
       }), _react.default.createElement("button", {
-        className: "searchButton",
+        className: "search-view__search-button",
         onClick: this.searchByArtistName
       }, "search"), _react.default.createElement("div", {
-        className: "resSongList"
+        className: "search-view__search-result-song-list"
       }, resSongsList));
     }
   }]);
@@ -44766,7 +44764,7 @@ function (_React$Component) {
 
 var _default = SearchView;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./SearchView.css":"view/SearchView.css","../components/searchResBox/SearchResBox":"components/searchResBox/SearchResBox.jsx","fetch-jsonp":"../node_modules/fetch-jsonp/build/fetch-jsonp.js"}],"container/SearchViewContainer.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./SearchView.css":"view/SearchView.css","../components/searchResult/SearchResult":"components/searchResult/SearchResult.jsx","fetch-jsonp":"../node_modules/fetch-jsonp/build/fetch-jsonp.js"}],"container/SearchViewContainer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -48391,12 +48389,12 @@ ReactPlayer.canEnablePIP = function (url) {
 };
 
 exports['default'] = ReactPlayer;
-},{"./players/YouTube":"../node_modules/react-player/lib/players/YouTube.js","./players/SoundCloud":"../node_modules/react-player/lib/players/SoundCloud.js","./players/Vimeo":"../node_modules/react-player/lib/players/Vimeo.js","./players/Facebook":"../node_modules/react-player/lib/players/Facebook.js","./players/Streamable":"../node_modules/react-player/lib/players/Streamable.js","./players/Wistia":"../node_modules/react-player/lib/players/Wistia.js","./players/Twitch":"../node_modules/react-player/lib/players/Twitch.js","./players/DailyMotion":"../node_modules/react-player/lib/players/DailyMotion.js","./players/Mixcloud":"../node_modules/react-player/lib/players/Mixcloud.js","./players/FilePlayer":"../node_modules/react-player/lib/players/FilePlayer.js","react":"../node_modules/react/index.js","./props":"../node_modules/react-player/lib/props.js","./utils":"../node_modules/react-player/lib/utils.js","./players":"../node_modules/react-player/lib/players/index.js","./Player":"../node_modules/react-player/lib/Player.js","./Preview":"../node_modules/react-player/lib/Preview.js","./preload":"../node_modules/react-player/lib/preload.js"}],"components/previewPlayingBox/PreviewPlayingBox.css":[function(require,module,exports) {
+},{"./players/YouTube":"../node_modules/react-player/lib/players/YouTube.js","./players/SoundCloud":"../node_modules/react-player/lib/players/SoundCloud.js","./players/Vimeo":"../node_modules/react-player/lib/players/Vimeo.js","./players/Facebook":"../node_modules/react-player/lib/players/Facebook.js","./players/Streamable":"../node_modules/react-player/lib/players/Streamable.js","./players/Wistia":"../node_modules/react-player/lib/players/Wistia.js","./players/Twitch":"../node_modules/react-player/lib/players/Twitch.js","./players/DailyMotion":"../node_modules/react-player/lib/players/DailyMotion.js","./players/Mixcloud":"../node_modules/react-player/lib/players/Mixcloud.js","./players/FilePlayer":"../node_modules/react-player/lib/players/FilePlayer.js","react":"../node_modules/react/index.js","./props":"../node_modules/react-player/lib/props.js","./utils":"../node_modules/react-player/lib/utils.js","./players":"../node_modules/react-player/lib/players/index.js","./Player":"../node_modules/react-player/lib/Player.js","./Preview":"../node_modules/react-player/lib/Preview.js","./preload":"../node_modules/react-player/lib/preload.js"}],"components/previewSong/PreviewSong.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/previewPlayingBox/PreviewPlayingBox.jsx":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/previewSong/PreviewSong.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -48406,7 +48404,7 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-require("./PreviewPlayingBox.css");
+require("./PreviewSong.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -48428,32 +48426,32 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var PreviewPlayingBox =
+var PreviewSong =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(PreviewPlayingBox, _React$Component);
+  _inherits(PreviewSong, _React$Component);
 
-  function PreviewPlayingBox() {
-    _classCallCheck(this, PreviewPlayingBox);
+  function PreviewSong() {
+    _classCallCheck(this, PreviewSong);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(PreviewPlayingBox).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(PreviewSong).apply(this, arguments));
   }
 
-  _createClass(PreviewPlayingBox, [{
+  _createClass(PreviewSong, [{
     key: "render",
     value: function render() {
       return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("p", {
-        className: "previewText"
+        className: "preview-song"
       }, this.props.songName), _react.default.createElement("hr", null));
     }
   }]);
 
-  return PreviewPlayingBox;
+  return PreviewSong;
 }(_react.default.Component);
 
-var _default = PreviewPlayingBox;
+var _default = PreviewSong;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./PreviewPlayingBox.css":"components/previewPlayingBox/PreviewPlayingBox.css"}],"components/musicPlayer/MusicPlayer.css":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./PreviewSong.css":"components/previewSong/PreviewSong.css"}],"components/musicPlayer/MusicPlayer.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -48511,36 +48509,36 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("div", {
-        className: "imageDiv"
+        className: "musicPlayer__imageDiv"
       }, this.props.currentSong !== null ? _react.default.createElement("img", {
         src: this.props.currentSong.artworkUrl100,
-        className: "songImagePreview"
+        className: "musicPlayer__imageDiv-songImagePreview"
       }) : null), this.props.currentSong === null ? _react.default.createElement("button", {
-        className: "playButton"
+        className: "musicPlayer__playButton"
       }, _react.default.createElement("img", {
-        className: "imagePosition",
+        className: "musicPlayer__play-image",
         src: require('./stop.png')
       })) : null, this.props.currentSong !== null && this.props.currentStatus === 'playing' ? _react.default.createElement("button", {
-        className: "playButton",
+        className: "musicPlayer__playButton",
         onClick: this.props.changeStatus
       }, _react.default.createElement("img", {
-        className: "imagePosition",
+        className: "musicPlayer__play-image",
         src: require('./play.jpg')
       })) : null, this.props.currentSong !== null && this.props.currentStatus !== 'playing' ? _react.default.createElement("button", {
-        className: "playButton",
+        className: "musicPlayer__playButton",
         onClick: this.props.changeStatus
       }, _react.default.createElement("img", {
-        className: "imagePosition",
+        className: "musicPlayer__play-image",
         src: require('./stop.png')
       })) : null, this.props.currentSong === null ? null : _react.default.createElement("div", {
-        className: "musicPlayerDiv"
+        className: "musicPlayer__audioPlayer"
       }, this.props.currentStatus === 'playing' ? _react.default.createElement(_reactPlayer.default, {
         url: this.props.currentSong.previewUrl,
         playing: true
       }) : _react.default.createElement(_reactPlayer.default, {
         url: this.props.currentSong.previewUrl
       })), _react.default.createElement("hr", {
-        className: "lineStyle"
+        className: "musicPlayer__line"
       }));
     }
   }]);
@@ -48604,7 +48602,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactPlayer = _interopRequireDefault(require("react-player"));
 
-var _PreviewPlayingBox = _interopRequireDefault(require("../components/previewPlayingBox/PreviewPlayingBox"));
+var _PreviewSong = _interopRequireDefault(require("../components/previewSong/PreviewSong"));
 
 var _MusicPlayerContainer = _interopRequireDefault(require("../container/MusicPlayerContainer"));
 
@@ -48648,17 +48646,17 @@ function (_React$Component) {
 
       var preSongs = this.props.allPreviewSongs.map(function (item) {
         return _react.default.createElement("button", {
-          className: "previewOption",
+          className: "preview-view__song-option",
           key: item.trackId,
           onClick: function onClick() {
             _this.props.playNewSong(item.trackId);
           }
-        }, _react.default.createElement(_PreviewPlayingBox.default, {
+        }, _react.default.createElement(_PreviewSong.default, {
           songName: item.trackName
         }));
       });
       return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("div", null, this.props.allPreviewSongs.length !== 0 ? _react.default.createElement(_MusicPlayerContainer.default, null) : null), _react.default.createElement("div", {
-        className: "previewSongList"
+        className: "preview-view__song-list"
       }, preSongs));
     }
   }]);
@@ -48669,7 +48667,7 @@ function (_React$Component) {
 
 var _default = PreviewView;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-player":"../node_modules/react-player/lib/ReactPlayer.js","../components/previewPlayingBox/PreviewPlayingBox":"components/previewPlayingBox/PreviewPlayingBox.jsx","../container/MusicPlayerContainer":"container/MusicPlayerContainer.js","./PreviewView.css":"view/PreviewView.css"}],"container/PreviewViewContainer.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-player":"../node_modules/react-player/lib/ReactPlayer.js","../components/previewSong/PreviewSong":"components/previewSong/PreviewSong.jsx","../container/MusicPlayerContainer":"container/MusicPlayerContainer.js","./PreviewView.css":"view/PreviewView.css"}],"container/PreviewViewContainer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -48735,13 +48733,11 @@ var store = (0, _redux.createStore)(_reducer.default);
 (0, _reactDom.render)(_react.default.createElement(_reactRedux.Provider, {
   store: store
 }, _react.default.createElement("div", {
-  className: "layout"
+  className: "main"
 }, _react.default.createElement("div", {
-  className: "searchViewLayout"
-}, _react.default.createElement(_SearchViewContainer.default, null)), _react.default.createElement("hr", {
-  className: "hrline"
-}), _react.default.createElement("div", {
-  className: "previewViewLayout"
+  className: "main__searchView"
+}, _react.default.createElement(_SearchViewContainer.default, null)), _react.default.createElement("div", {
+  className: "main__previewView"
 }, _react.default.createElement(_PreviewViewContainer.default, null)))), document.getElementById('root'));
 },{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","redux":"../node_modules/redux/es/redux.js","react-redux":"../node_modules/react-redux/es/index.js","./style.css":"style.css","./container/SearchViewContainer":"container/SearchViewContainer.js","./container/PreviewViewContainer":"container/PreviewViewContainer.js","./redux/reducer":"redux/reducer.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -48770,7 +48766,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65124" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62455" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
