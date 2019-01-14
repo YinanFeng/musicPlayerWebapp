@@ -2,5 +2,7 @@
     position: relative;
     left: 8px;
     top:-3px;
-    width: 300px
+    width: 300px;
+    color: #212121;
+    font-size: 14px;
 }

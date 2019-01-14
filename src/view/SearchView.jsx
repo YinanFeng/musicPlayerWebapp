@@ -16,6 +16,7 @@ class SearchView extends React.Component {
   }
     this.searchByArtistName = this.searchByArtistName.bind(this)
     this.onSearchBoxValueChanged = this.onSearchBoxValueChanged.bind(this)
+    this.handleEnterPress = this.handleEnterPress.bind(this)
   }
 
   onSearchBoxValueChanged(e) {
@@ -34,6 +35,12 @@ class SearchView extends React.Component {
         .then(res => res.json())
         .then(res => this.props.updateNewSearch(res.results))
         .catch(err => console.log(err))
+    }
+  }
+
+  handleEnterPress (e) {
+    if(e.key === 'Enter') {
+      this.searchByArtistName()
     }
   }
 
@@ -60,8 +67,9 @@ class SearchView extends React.Component {
       <React.Fragment>
         <input value={this.state.searchBoxValue}
                className='search-view__search-input'
+               onKeyPress={this.handleEnterPress}
                onChange={this.onSearchBoxValueChanged} />
-        <button className='search-view__search-button' onClick={this.searchByArtistName}>search</button>
+        {/* <button className='search-view__search-button' onClick={this.searchByArtistName}>search</button> */}
         <div className='search-view__search-result-song-list'>
           {resSongsList}
         </div>

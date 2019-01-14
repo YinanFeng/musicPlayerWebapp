@@ -9,7 +9,7 @@ class SearchResultList extends React.Component {
     return (
       <React.Fragment>
         <div className='search-result'>
-          <div>
+          <div className='search-result__song-image-div'>
             <img className='search-result__song-image' src={this.props.imageURL} />
           </div>
           <div className='search-result__text'>
@@ -21,7 +21,7 @@ class SearchResultList extends React.Component {
             {this.props.playing? <img className='search-result__image-playing' src={require('./musicPlaying.png')} />:null}
           </div>
         </div>
-        <hr />
+        {/* <hr /> */}
       </React.Fragment>
     );
   };

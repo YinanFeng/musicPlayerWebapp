@@ -7,15 +7,16 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    width:1200px;
+    width:400px;
 }
 
 .main__previewView {
     display: flex;
     flex-direction: column;
     position: relative;
-    left: 10px;
-    width: 300px;
+    left: -20px;
+    top: 60px;
+    width: 600px;
 }
 
 body{

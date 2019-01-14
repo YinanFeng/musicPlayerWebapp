@@ -1,5 +1,7 @@
 import { merge, } from 'ramda'
 
+import { getPlayStatus } from './utils.js'
+
 
 const initialState = {
     searchResult: [],
@@ -10,20 +12,15 @@ const initialState = {
 
 
 export default (state = initialState, action) => {
-    console.log('in reducerrrrrrr')
     const { type, payload } = action
     switch (type) {
         case 'NEW_SEARCH':
             return merge(state, {searchResult: payload.songSearched})
         case 'CHANGE_STATUS':
-            if(state.currentStatus === 'playing') {
-                return merge(state, {currentStatus: 'stopping'})
-            }
-            return merge(state, {currentStatus: 'playing'})
+            return merge(state, {currentStatus: getPlayStatus(state.currentStatus)})
         case 'ADD_PREVIEW':
             const newPreview = state.searchResult.filter(song => song.trackId === payload.newPreviewTrackId)
             const previewAfterFilter = state.allPreviewSongs.filter(song => song.trackId !== payload.newPreviewTrackId)
-            console.log(state.allPreviewSongs)
             //TODO: unique the prelist
             const preList = [...newPreview, ...previewAfterFilter]
             return merge(state, {allPreviewSongs: preList})
@@ -34,6 +31,7 @@ export default (state = initialState, action) => {
             return state
     }
 }
+
 
 export const updateNewSearch = res => ({
     type: 'NEW_SEARCH', payload: { songSearched: res }

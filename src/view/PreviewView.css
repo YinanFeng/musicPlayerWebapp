@@ -7,4 +7,5 @@
 .preview-view__song-option {
     background-color: transparent;
     border: none;
+    text-align: left;
 }
