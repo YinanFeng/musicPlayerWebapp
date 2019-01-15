@@ -1,6 +1,6 @@
 import { merge, } from 'ramda'
 
-import { getPlayStatus } from './utils.js'
+import { getPlayStatus, addToPrevious, chooseNewSong } from './utils.js'
 
 
 const initialState = {
@@ -19,14 +19,9 @@ export default (state = initialState, action) => {
         case 'CHANGE_STATUS':
             return merge(state, {currentStatus: getPlayStatus(state.currentStatus)})
         case 'ADD_PREVIEW':
-            const newPreview = state.searchResult.filter(song => song.trackId === payload.newPreviewTrackId)
-            const previewAfterFilter = state.allPreviewSongs.filter(song => song.trackId !== payload.newPreviewTrackId)
-            //TODO: unique the prelist
-            const preList = [...newPreview, ...previewAfterFilter]
-            return merge(state, {allPreviewSongs: preList})
+            return merge(state, {allPreviewSongs: addToPrevious(payload.newPreviewTrackId,state.searchResult,state.allPreviewSongs)})
         case 'PLAY_NEW_SONG':
-            const newSong = state.searchResult.filter(song => song.trackId === payload.newPreviewId).pop()
-            return merge(state, {currentSong: newSong})
+            return merge(state, {currentSong: chooseNewSong(payload.newPreviewId, state.searchResult)})
         default:
             return state
     }

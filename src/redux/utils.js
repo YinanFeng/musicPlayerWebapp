@@ -9,3 +9,14 @@ export const getPlayStatus = (status) => {
       return 'stopping'
   }
 }
+
+export const addToPrevious = ( trackID, searchResultList, previewList ) => {
+  const newPreview = searchResultList.filter(song => song.trackId === trackID)
+  const previewAfterFilter = previewList.filter(song => song.trackId !== trackID)
+  const preList = [...newPreview, ...previewAfterFilter]
+  return preList
+}
+
+export const chooseNewSong = ( trackID, searchResultList ) => {
+  return searchResultList.filter(song => song.trackId === trackID).pop()
+}

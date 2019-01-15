@@ -44312,7 +44312,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getPlayStatus = void 0;
+exports.chooseNewSong = exports.addToPrevious = exports.getPlayStatus = void 0;
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
 var getPlayStatus = function getPlayStatus(status) {
   switch (status) {
@@ -44328,6 +44336,27 @@ var getPlayStatus = function getPlayStatus(status) {
 };
 
 exports.getPlayStatus = getPlayStatus;
+
+var addToPrevious = function addToPrevious(trackID, searchResultList, previewList) {
+  var newPreview = searchResultList.filter(function (song) {
+    return song.trackId === trackID;
+  });
+  var previewAfterFilter = previewList.filter(function (song) {
+    return song.trackId !== trackID;
+  });
+  var preList = [].concat(_toConsumableArray(newPreview), _toConsumableArray(previewAfterFilter));
+  return preList;
+};
+
+exports.addToPrevious = addToPrevious;
+
+var chooseNewSong = function chooseNewSong(trackID, searchResultList) {
+  return searchResultList.filter(function (song) {
+    return song.trackId === trackID;
+  }).pop();
+};
+
+exports.chooseNewSong = chooseNewSong;
 },{}],"redux/reducer.js":[function(require,module,exports) {
 "use strict";
 
@@ -44339,14 +44368,6 @@ exports.playNewSong = exports.changeStatus = exports.addToPreview = exports.upda
 var _ramda = require("ramda");
 
 var _utils = require("./utils.js");
-
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
 var initialState = {
   searchResult: [],
@@ -44373,24 +44394,13 @@ var _default = function _default() {
       });
 
     case 'ADD_PREVIEW':
-      var newPreview = state.searchResult.filter(function (song) {
-        return song.trackId === payload.newPreviewTrackId;
-      });
-      var previewAfterFilter = state.allPreviewSongs.filter(function (song) {
-        return song.trackId !== payload.newPreviewTrackId;
-      }); //TODO: unique the prelist
-
-      var preList = [].concat(_toConsumableArray(newPreview), _toConsumableArray(previewAfterFilter));
       return (0, _ramda.merge)(state, {
-        allPreviewSongs: preList
+        allPreviewSongs: (0, _utils.addToPrevious)(payload.newPreviewTrackId, state.searchResult, state.allPreviewSongs)
       });
 
     case 'PLAY_NEW_SONG':
-      var newSong = state.searchResult.filter(function (song) {
-        return song.trackId === payload.newPreviewId;
-      }).pop();
       return (0, _ramda.merge)(state, {
-        currentSong: newSong
+        currentSong: (0, _utils.chooseNewSong)(payload.newPreviewId, state.searchResult)
       });
 
     default:
