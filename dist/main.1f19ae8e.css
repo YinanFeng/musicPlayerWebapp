@@ -179,3 +179,9 @@ body{
     border: none;
     text-align: left;
 }
+
+.preview-view__mobile-player {
+    position: fixed;
+    left: 58px;
+    top: 650px;
+}

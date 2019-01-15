@@ -13,6 +13,8 @@ import reducer from './redux/reducer'
 // require('es6-promise').polyfill()
 const store = createStore(reducer)
 
+
+
 render(
     <Provider store={store}>
         <div className='main'>
